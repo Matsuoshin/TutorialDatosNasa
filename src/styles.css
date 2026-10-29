@@ -5,51 +5,140 @@ body { margin: 0; min-width: 320px; background: #08111f; line-height: 1.6; }
 a { color: inherit; }
 button, input { font: inherit; }
 button, .button-link { border: 1px solid #eef4ff; background: #eef4ff; color: #07101d; border-radius: 10px; padding: 10px 14px; font-weight: 750; cursor: pointer; text-decoration: none; display: inline-block; }
+
+/* ── Layout ──────────────────────────────────────────────────────── */
 .layout { min-height: 100vh; display: grid; grid-template-columns: 270px minmax(0, 1fr); }
 .sidebar { height: 100vh; position: sticky; top: 0; padding: 24px 18px; overflow-y: auto; background: #0b1627; border-right: 1px solid #2b3d59; }
 .brand { font-size: 1.08rem; font-weight: 850; }
 .sidebar-copy { color: #a9bad4; font-size: .9rem; }
 .sidebar nav { display: grid; gap: 6px; margin: 28px 0; }
-.sidebar nav a { padding: 9px 10px; border-radius: 9px; text-decoration: none; color: #a9bad4; }
+.sidebar nav a { padding: 9px 10px; border-radius: 9px; text-decoration: none; color: #a9bad4; font-size: .88rem; }
 .sidebar nav a:hover { background: #101c2f; color: #eef4ff; }
 .progress-track { height: 8px; background: #1f2d43; border-radius: 999px; overflow: hidden; }
 .progress-bar { height: 100%; background: #eef4ff; transition: width .25s ease; }
 .content { width: min(1000px, calc(100% - 38px)); margin: 0 auto; padding: 62px 0 100px; }
+
+/* ── Typography ──────────────────────────────────────────────────── */
 .hero { padding-bottom: 38px; border-bottom: 1px solid #2b3d59; }
 .kicker { margin: 0 0 8px; color: #a9bad4; letter-spacing: .13em; text-transform: uppercase; font-size: .78rem; font-weight: 750; }
 h1 { font-size: clamp(2.7rem, 7vw, 5.2rem); line-height: .98; margin: .12em 0 .3em; max-width: 9ch; }
 h2 { font-size: clamp(1.65rem, 4vw, 2.6rem); line-height: 1.15; margin: 0 0 .5em; }
-h3 { margin-top: 0; }
+h3 { margin-top: 1.4em; }
 .lead { max-width: 780px; color: #c9d6e9; font-size: 1.18rem; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 .chips span { padding: 6px 10px; border: 1px solid #2b3d59; border-radius: 999px; color: #a9bad4; font-size: .87rem; }
+
+/* ── Step sections ───────────────────────────────────────────────── */
 .step { padding: 58px 0; border-bottom: 1px solid #2b3d59; scroll-margin-top: 24px; }
 .card { background: #101c2f; border: 1px solid #2b3d59; border-radius: 16px; padding: 20px; margin: 16px 0; }
+.card ul { margin: 8px 0; padding-left: 20px; }
+.card li { margin: 5px 0; }
+
+/* ── Callouts ────────────────────────────────────────────────────── */
 .callout { margin: 18px 0; padding: 15px 18px; border-left: 4px solid #eef4ff; border-radius: 0 12px 12px 0; background: #101d31; }
 .callout strong { display: block; margin-bottom: 3px; }
+.callout ul { margin: 8px 0 0; padding-left: 18px; }
+.callout li { margin: 4px 0; }
+.callout.tip { border-left-color: #4fa3e0; background: #0a1928; }
+.callout.tip strong { color: #7fc4f5; }
+.callout.warning { border-left-color: #e0a020; background: #181208; }
+.callout.warning strong { color: #f0c040; }
+
+/* ── Grid helpers ────────────────────────────────────────────────── */
 .two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* ── Status + previews ───────────────────────────────────────────── */
 .status { padding: 12px 14px; border-radius: 10px; background: #0a1525; color: #c7d5e9; }
 .preview, pre { overflow-x: auto; padding: 18px; border-radius: 14px; border: 1px solid #20314c; background: #050b14; }
 code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
 .code-box { position: relative; }
 .copy-button { position: absolute; right: 10px; top: 10px; padding: 6px 9px; background: #17263e; color: #eef4ff; border-color: #2b3d59; }
+
+/* ── Stats grid ──────────────────────────────────────────────────── */
 .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 18px 0; }
 .stat { min-width: 0; padding: 14px; border: 1px solid #2b3d59; border-radius: 12px; background: #0b1627; }
 .stat span, .stat small { display: block; color: #a9bad4; }
 .stat strong { display: block; margin: 5px 0; font-size: 1.45rem; overflow-wrap: anywhere; }
+
+/* ── Tables ──────────────────────────────────────────────────────── */
 .table-wrap { max-height: 390px; overflow: auto; border: 1px solid #2b3d59; border-radius: 12px; }
 table { width: 100%; border-collapse: collapse; }
 th, td { padding: 9px 11px; border-bottom: 1px solid #22344e; text-align: right; white-space: nowrap; }
 th:first-child, td:first-child { text-align: left; }
+.highlight-row { background: #0e1f38; }
+.highlight-row td { color: #eef4ff; font-weight: 600; }
+
+/* ── Controls ────────────────────────────────────────────────────── */
 .done { display: flex; align-items: center; gap: 10px; margin-top: 20px; font-weight: 700; }
 .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 18px 0; }
 .controls label { display: grid; gap: 5px; }
 input[type="month"], input[type="file"] { color: #eef4ff; background: #091424; border: 1px solid #2b3d59; border-radius: 9px; padding: 9px; }
-.chart { display: block; width: 100%; height: auto; border-radius: 12px; background: #07101d; }
+
+/* ── Chart ───────────────────────────────────────────────────────── */
+.chart { display: block; width: 100%; height: auto; border-radius: 12px; background: #07101d; margin: 18px 0; }
+
+/* ── Quiz ────────────────────────────────────────────────────────── */
 .quiz-question { border: 0; padding: 0; margin: 24px 0; }
 .quiz-question legend { margin-bottom: 9px; }
 .quiz-question label { display: flex; gap: 9px; align-items: flex-start; margin: 7px 0; padding: 9px 11px; border: 1px solid #2b3d59; border-radius: 9px; cursor: pointer; }
 .quiz-result { font-weight: 800; }
-footer { padding-top: 44px; color: #a9bad4; }
-@media (max-width: 900px) { .layout { display: block; } .sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #2b3d59; } .sidebar nav { grid-template-columns: repeat(3, 1fr); } .content { padding-top: 42px; } .stats { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 620px) { .sidebar nav { grid-template-columns: 1fr 1fr; } .two-columns, .stats { grid-template-columns: 1fr; } h1 { font-size: 3rem; } }
+
+/* ── Nav steps (numbered instructions) ──────────────────────────── */
+.nav-steps { display: flex; flex-direction: column; gap: 0; margin: 22px 0; }
+.nav-step { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid #182a3e; }
+.nav-step:last-child { border-bottom: none; }
+.nav-step-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #1a2e4a; border: 2px solid #3a5a82; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; color: #a9d4ff; margin-top: 2px; }
+.nav-step-body { flex: 1; }
+.nav-step-body p { margin: 8px 0 0; color: #c0d0e4; }
+
+/* ── URL box ─────────────────────────────────────────────────────── */
+.url-box { display: flex; align-items: center; gap: 10px; background: #050b14; border: 1px solid #2b3d59; border-radius: 10px; padding: 10px 14px; margin: 12px 0; flex-wrap: wrap; }
+.url-box code { flex: 1; color: #7fc4f5; font-size: .92rem; word-break: break-all; }
+.url-box button { padding: 5px 10px; font-size: .82rem; flex-shrink: 0; }
+
+/* ── Page mockup (NASA site preview) ────────────────────────────── */
+.page-mockup { background: #0c1929; border: 1px solid #2b3d59; border-radius: 12px; overflow: hidden; margin: 14px 0; }
+.mockup-url { background: #111e30; padding: 8px 14px; font-size: .82rem; color: #7a9ac0; font-family: ui-monospace, monospace; border-bottom: 1px solid #1f3250; }
+.mockup-content { padding: 16px 18px; }
+.mockup-h1 { font-size: 1.1rem; font-weight: 700; color: #4fa3e0; margin-bottom: 6px; }
+.mockup-body { font-size: .88rem; color: #94afc8; }
+.mockup-section-title { font-size: .95rem; font-weight: 700; color: #eef4ff; margin-bottom: 4px; }
+.mockup-subsection { font-size: .85rem; color: #6a90b0; margin-bottom: 10px; padding-left: 12px; border-left: 2px solid #2b3d59; }
+.mockup-table-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid #182a3e; font-size: .85rem; gap: 12px; }
+.mockup-table-row.muted { opacity: .45; }
+.mockup-table-row:last-child { border-bottom: none; }
+.mockup-links { white-space: nowrap; flex-shrink: 0; color: #7a9ac0; }
+.mockup-highlight { background: #1a3a5a; color: #f0c040; padding: 2px 7px; border-radius: 5px; font-weight: 700; }
+
+/* ── Filename breakdown ──────────────────────────────────────────── */
+.filename-big { font-size: 1.3rem; font-weight: 700; color: #7fc4f5; display: block; margin-bottom: 14px; }
+.filename-breakdown { display: grid; gap: 7px; }
+.filename-breakdown div { font-size: .92rem; color: #c0d0e4; padding: 6px 10px; background: #0b1829; border-radius: 7px; }
+.filename-breakdown code { color: #7fc4f5; }
+
+/* ── Folder tree ─────────────────────────────────────────────────── */
+.folder-tree { margin: 12px 0; }
+.folder-tree pre { background: #050b14; border: 1px solid #1e3050; border-radius: 12px; padding: 16px 18px; color: #a9c8e8; font-size: .88rem; }
+
+/* ── Pipeline summary ────────────────────────────────────────────── */
+.pipeline { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 18px 0; padding: 18px; background: #0b1627; border: 1px solid #2b3d59; border-radius: 14px; }
+.pipeline span { font-size: .85rem; color: #c0d0e4; padding: 4px 9px; background: #0f1f34; border-radius: 7px; }
+.pipeline .arrow { background: transparent; color: #4a6a8a; padding: 4px 2px; }
+
+/* ── Footer ──────────────────────────────────────────────────────── */
+footer { padding-top: 44px; color: #a9bad4; font-size: .9rem; }
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .layout { display: block; }
+  .sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #2b3d59; }
+  .sidebar nav { grid-template-columns: repeat(3, 1fr); }
+  .content { padding-top: 42px; }
+  .stats { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 620px) {
+  .sidebar nav { grid-template-columns: 1fr 1fr; }
+  .two-columns, .stats { grid-template-columns: 1fr; }
+  h1 { font-size: 3rem; }
+  .pipeline { flex-direction: column; align-items: flex-start; }
+}
